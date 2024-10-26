@@ -57,6 +57,23 @@ body{
     box-shadow: 0px 10px 40px #00000056;
 }
 
+.card-register{
+    background-color: #2E4B65;
+    width: 20%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 35px;
+    outline: none;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.card-register > h1{
+    color: #00ff88;
+    font-weight: 800;
+}
 .card-login > h1{
     color: #00ff88;
     font-weight: 800;

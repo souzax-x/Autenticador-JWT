@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
         <div class="login">
-            <form id="loginform">
-                <label class="form-input">
-                    <p>Nome</p>
-                    <input type="text" name="" id="name">
-                </label>
-                <label class="form-input">
-                    <p>E-mail</p>
-                    <input type="text" name="" id="email">
-                </label>
-                <label class="form-input">
-                    <p>Senha</p>
-                    <input type="password" name="" id="senha">
-                </label>
-                <label class="form-input">
-                    <p>Confirme a sua senha</p>
-                    <input type="password" name="" id="confirme_senha">
-                </label>
-                <button type="submit">Cadastrar</button>
-            </form>
+            <div class="card-register">
+                <h1>Crie sua conta</h1>
+                <form id="loginform">
+                    <div class="label-input">
+                        <input type="text" class="matricula" id="name" placeholder="Nome">
+                    </div>
+                    <div class="label-input">
+                        <input type="text" class="matricula" id="email" placeholder="E-mail">
+                    </div>
+                    <div class="label-input"> 
+                        <input type="password" class="senha"  id="senha" placeholder="Senha">
+                    </div>
+                    <div class="label-input"> 
+                        <input type="password" class="senha"  id="confirme_senha" placeholder="Confirme sua senha">
+                    </div>
+                    <button class="btn-submit" type="submit">Cadastrar</button>
+                </form>
+            </div>
         </div>
     </main>
 
