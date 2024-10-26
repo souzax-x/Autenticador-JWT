@@ -144,7 +144,7 @@ const dbpass = process.env.DB_PASSWORD;
 mongoose
     .connect(`mongodb+srv://${dbUser}:${dbpass}@api-zero.iyf9f.mongodb.net/?retryWrites=true&w=majority&appName=api-zero`)
     .then(() => {
-        const port = process.env.PORT || 3000; // Usando a variável PORT
+        const port = process.env.PORT || 3000;
         app.listen(port, () => {
             console.log(`Servidor rodando na porta ${port}`);
         });
