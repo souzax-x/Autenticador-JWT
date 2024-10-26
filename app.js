@@ -138,13 +138,17 @@ app.post("/auth/login", async(req, res) =>{
     }
 })
 
-const dbUser= process.env.DB_USER
-const dbpass= process.env.DB_PASSWORD
+const dbUser = process.env.DB_USER;
+const dbpass = process.env.DB_PASSWORD;
 
 mongoose
     .connect(`mongodb+srv://${dbUser}:${dbpass}@api-zero.iyf9f.mongodb.net/?retryWrites=true&w=majority&appName=api-zero`)
     .then(() => {
-        app.listen(3000)
-        console.log("Conectou!");
+        // Use a variável de ambiente PORT para escutar na porta correta
+        const port = process.env.PORT || 3000; // 3000 para desenvolvimento local
+        app.listen(port, () => {
+            console.log(`Servidor rodando na porta ${port}`);
+        });
+        console.log("Conectou ao MongoDB!");
     })
     .catch((err) => console.log(err));
