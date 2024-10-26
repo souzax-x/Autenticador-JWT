@@ -144,11 +144,12 @@ const dbpass = process.env.DB_PASSWORD;
 mongoose
     .connect(`mongodb+srv://${dbUser}:${dbpass}@api-zero.iyf9f.mongodb.net/?retryWrites=true&w=majority&appName=api-zero`)
     .then(() => {
-        // Use a variável de ambiente PORT para escutar na porta correta
-        const port = process.env.PORT || 3000; // 3000 para desenvolvimento local
+        const port = process.env.PORT || 3000; // Usando a variável PORT
         app.listen(port, () => {
             console.log(`Servidor rodando na porta ${port}`);
         });
         console.log("Conectou ao MongoDB!");
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+        console.log('Erro ao conectar ao MongoDB:', err);
+    });
