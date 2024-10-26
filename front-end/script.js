@@ -7,7 +7,7 @@ loginform.addEventListener("submit", async (e) => {
     let password = document.getElementById('senha').value
 
     try {
-        const response = await fetch("https://autenticador-jwt.onrender.com", {
+        const response = await fetch("https://autenticador-jwt.onrender.com/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
