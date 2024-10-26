@@ -21,7 +21,7 @@ loginform.addEventListener("submit", async (e) => {
 
         if(response.ok){
             alert(data.msg);
-            window.location.href = "index.html"
+            window.location.href = "../index.html"
         }else{
             alert(data.msg);
         }
