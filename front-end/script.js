@@ -1,10 +1,10 @@
-const loginform = document.getElementById('loginform')
+const loginform = document.getElementById('loginform');
 
 loginform.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    let email = document.getElementById('Email').value
-    let password = document.getElementById('senha').value
+    let email = document.getElementById('Email').value;
+    let password = document.getElementById('senha').value;
 
     try {
         const response = await fetch("https://autenticador-jwt.onrender.com/auth/login", {
@@ -25,5 +25,26 @@ loginform.addEventListener("submit", async (e) => {
     } catch (error) {
         console.error("Erro ao fazer login", error);
     }
-
 });
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+            .then((registration) => {
+                console.log('Service Worker registrado com sucesso:', registration);
+            })
+            .catch((error) => {
+                console.log('Falha ao registrar o Service Worker:', error);
+            });
+    });
+}
+
+if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition((position) => {
+        console.log('Localização:', position.coords.latitude, position.coords.longitude);
+    }, (error) => {
+        console.error('Erro ao obter geolocalização:', error);
+    });
+} else {
+    console.log("Geolocalização não está disponível no seu navegador.");
+}
